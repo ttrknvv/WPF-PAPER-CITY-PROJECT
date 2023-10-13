@@ -1,0 +1,135 @@
+﻿<Window x:Class="EXAMPLE.View.MainWindow" x:Name="windowMAIN"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EXAMPLE.View"
+        mc:Ignorable="d" 
+        Style="{DynamicResource MainBackgroundUser}"
+        Title="MainWindow" 
+        Height="650" 
+        Width="820" 
+        WindowStartupLocation="CenterScreen" 
+        WindowStyle="None" 
+        ResizeMode="NoResize" 
+        Icon="/View/UserAppView/icon.png">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="600"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90"/>
+            <ColumnDefinition Width="730"/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column="0" Width="50" Height="50" Margin="0, 5, 20, 0"
+               Grid.Row="0" 
+               Source="D:\2k2s\COURSE_PROJECT\SOURCE\PHOTOES\icon.png"/>
+        <!--Контейнер верхнегоо правого управляюшего меню-->
+        <Grid Name="ToolBar" 
+              Background="Transparent"
+              Grid.Row="0" Grid.Column="1"
+              MouseDown="DragMoveApp">
+            <StackPanel Name="PanelForMainElem" 
+                        Orientation="Horizontal" 
+                        HorizontalAlignment="Right">
+                <Image Name="CollapseApp" 
+                       Height="15" 
+                       Width="15" 
+                       Margin="0, 0, 20, 0" 
+                       Style="{DynamicResource MainElementsStyleCollapse}"
+                       MouseDown="CollapseApp_MouseDown">
+                    <Image.Effect>
+                        <BlurEffect Radius="0.2"/>
+                    </Image.Effect>
+                </Image>
+                <Image Name="CloseApp" 
+                       Height="15" 
+                       Width="15" 
+                       Margin="5, 5 ,20, 5" 
+                       Style="{DynamicResource MainElementsStyleClose}"
+                       MouseDown="CloseApp_MouseDown">
+                    <Image.Effect>
+                        <BlurEffect Radius="0.2"/>
+                    </Image.Effect>
+                </Image>
+            </StackPanel>
+        </Grid>
+
+        <!--Левая панель-->
+        <Border Grid.Column="0" Grid.Row="1" Width="70" Height="600"
+                Background="Transparent" CornerRadius="5" 
+                Margin="0, 0, 24, 40">
+            <Grid>
+                <StackPanel x:Name="listButtons"
+                        Orientation="Vertical">
+                    <Button Name="MainPageButt"
+                            Style="{DynamicResource ButtonMain}"
+                            Command="{Binding OpenMainPage}"
+                            CommandParameter="{Binding ElementName=windowMAIN}"
+                            MouseEnter="MainPageButt_MouseEnter"
+                            MouseLeave="MainPageButt_MouseLeave">
+                        <Image x:Name="MainPage" 
+                               Source="D:\2k2s\COURSE_PROJECT\SOURCE\PHOTOES\homeActive.png"
+                               Opacity="1"/>
+                    </Button>
+                    <Button x:Name="CatalogPageButt" 
+                            Style="{DynamicResource ButtonCatalog}"
+                            Command="{Binding OpenCatalogPage}"
+                            CommandParameter="{Binding ElementName=windowMAIN}"
+                            MouseEnter="CatalogPageButt_MouseEnter"
+                            MouseLeave="CatalogPageButt_MouseLeave">
+                        <Image x:Name="CatalogPage" 
+                               Source="D:\2k2s\COURSE_PROJECT\SOURCE\PHOTOES\open-book.png"
+                               Opacity="0.3"
+                               />
+                    </Button>
+                    <Button x:Name="BasketPageButt"
+                            Style="{DynamicResource ButtonBusket}" 
+                            Command="{Binding OpenBasketPage}"
+                            CommandParameter="{Binding ElementName=windowMAIN}"
+                            MouseEnter="BasketPageButt_MouseEnter"
+                            MouseLeave="BasketPageButt_MouseLeave">
+                        <Image x:Name="BasketPage"
+                               Source="D:\2k2s\COURSE_PROJECT\SOURCE\PHOTOES\basket.png"
+                               Opacity="0.3"
+                               />
+                    </Button>
+                    <Button x:Name="ProfilePageButt" 
+                        Style="{DynamicResource ButtonProfile}" 
+                            Command="{Binding OpenProfilePage}"
+                            CommandParameter="{Binding ElementName=windowMAIN}"
+                            MouseEnter="ProfilePageButt_MouseEnter"
+                            MouseLeave="ProfilePageButt_MouseLeave">
+                        <Image x:Name="ProfilePage"
+                               Source="D:\2k2s\COURSE_PROJECT\SOURCE\PHOTOES\profile.png"
+                               Opacity="0.3"
+                               />
+                    </Button>
+                    <Button x:Name="HelpPageButt"
+                            Command="{Binding OpenHelpPage}"
+                            CommandParameter="{Binding ElementName=windowMAIN}"
+                            Style="{DynamicResource ButtonHelp}"
+                            MouseEnter="HelpPageButt_MouseEnter"
+                            MouseLeave="HelpPageButt_MouseLeave">
+                        <Image x:Name="HelpPage"
+                               Source="D:\2k2s\COURSE_PROJECT\SOURCE\PHOTOES\question.png"
+                               Opacity="0.3"
+                               />
+                    </Button>
+                    <Button Content="{DynamicResource Leave}"
+                            Style="{DynamicResource ButtonLeave}"
+                            Click="Button_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Frame Focusable="False" 
+                   x:Name="PageNow" 
+                   Grid.Row="1" 
+                   Grid.Column="1" 
+                   Content="{Binding PageMain}"
+                   NavigationUIVisibility="Hidden"/>
+    </Grid>
+    
+</Window>

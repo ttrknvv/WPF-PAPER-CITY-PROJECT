@@ -1,0 +1,115 @@
+﻿<Page x:Class="EXAMPLE.View.AdminAppView.AcceptBuyPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EXAMPLE.View.AdminAppView"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" 
+      d:DesignWidth="730"
+      Background="Transparent"
+      Title="AcceptBuyPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Style="{DynamicResource ForButtonWithIconRefresh}"
+                    HorizontalAlignment="Center"
+                    Command="{Binding RefreshPayment}"/>
+        <ListView x:Name="ListPaying"
+                  Background="Transparent"
+                  BorderThickness="0"
+                  Width="720"
+                  Grid.Row="1"
+                  ItemsSource="{Binding Payments}">
+            <ListView.Resources>
+                <Style TargetType="ScrollBar">
+                    <Setter Property="Template" Value="{DynamicResource VerticalScrollBar}"/>
+                </Style>
+            </ListView.Resources>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <EventSetter Event="MouseDoubleClick" Handler="ListViewItem_MouseDoubleClick"/>
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="HorizontalAlignment" Value="Left"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                    <Setter Property="Width" Value="720"/>
+                    <Setter Property="Margin" Value="0, 6, 10, 10"/>
+                    <Setter Property="Height" Value="90"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListViewItem">
+                                <Border BorderThickness="0" HorizontalAlignment="Center" BorderBrush="Transparent" Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                                          Content="{TemplateBinding Content}" 
+                                                          ContentTemplate="{TemplateBinding ContentTemplate}" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF1B3E65"/>
+                        </Trigger>
+                    </Style.Triggers>
+
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical" 
+                                HorizontalAlignment="Left"
+                               MaxWidth="{Binding ActualWidth, ElementName=CatalogBooks}"
+                               Height="Auto" 
+                               />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel Orientation="Horizontal"
+                               Width="720"
+                               Margin="20, 0, 0, 0">
+                        <StackPanel Margin="10, 0, 0, 0"
+                                    Width="70">
+                            <TextBlock Text="Id операции"
+                                       Foreground="#FF9E788F"/>
+                            <TextBlock Text="{Binding ID_PAY}"
+                                       Foreground="#FF96ADC8"/>
+                        </StackPanel>
+                        <StackPanel Margin="20, 0, 0, 0"
+                                    Width="130">
+                            <TextBlock Text="{DynamicResource IdUser}"
+                                       Foreground="#FF9E788F"/>
+                            <TextBlock Text="{Binding ID_USER}"
+                                       Foreground="#FF96ADC8"/>
+                            <TextBlock Text="{DynamicResource IdBook}"
+                                       Foreground="#FF9E788F"/>
+                            <TextBlock Text="{Binding ID_BOOK}"
+                                       Foreground="#FF96ADC8"/>
+                        </StackPanel>
+                        <StackPanel Margin="20, 0, 0, 0">
+                            <TextBlock Text="{DynamicResource NumberCard}"
+                                       Foreground="#FF9E788F"/>
+                            <TextBlock Text="{Binding NUMBER_CARD}"
+                                       Foreground="#FF96ADC8"/>
+                            <TextBlock Text="{DynamicResource DateTestBuy}"
+                                       Foreground="#FF9E788F"/>
+                            <TextBlock Text="{Binding DATE}"
+                                       Foreground="#FF96ADC8"/>
+                        </StackPanel>
+                        <StackPanel Margin="40, 0, 0, 0">
+                            <TextBlock Text="{DynamicResource NameOwnerCard}"
+                                       Foreground="#FF9E788F"/>
+                            <TextBlock Text="{Binding NAME_OWNER}"
+                                       Foreground="#FF96ADC8"/>
+                        </StackPanel>
+
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>

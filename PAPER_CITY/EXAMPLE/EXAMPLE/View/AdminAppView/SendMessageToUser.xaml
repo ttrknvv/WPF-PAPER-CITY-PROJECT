@@ -1,0 +1,46 @@
+﻿<Window x:Class="EXAMPLE.View.AdminAppView.SendMessageToUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EXAMPLE.View.AdminAppView"
+        mc:Ignorable="d"
+        Title="SendMessageToUser" 
+        Height="450" 
+        Width="360"
+        Background="#FFB8CEE7"
+        ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="{DynamicResource Title}"
+                       FontSize="20"
+                       Margin="20, 10, 10, 0"/>
+            <TextBox Name="Subject"
+                     Style="{DynamicResource ReviewStyleText}"
+                     HorizontalAlignment="Left"
+                     Height="30"
+                     Width="300"
+                     Margin="20, 10, 10, 0"/>
+            <TextBlock Text="{DynamicResource Message}"
+                       FontSize="20"
+                       Margin="20, 10, 10, 0"/>
+            <TextBox Name="Message"
+                     Style="{DynamicResource ReviewStyleText}"
+                     HorizontalAlignment="Left"
+                     Height="200"
+                     Width="300"
+                     Margin="20, 10, 10, 0"/>
+            <WrapPanel
+                Margin="20, 20, 0, 0">
+                <Button Content="{DynamicResource Send}"
+                        Style="{DynamicResource ButtonBuy}"
+                        Click="Button_Click"/>
+                <Button Content="{DynamicResource Cansel}"
+                        Style="{DynamicResource ButtonBuy}"
+                        Margin="60, 0, 0, 0"
+                        Click="Button_Click_1"/>
+            </WrapPanel>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,78 @@
+﻿<Page x:Class="EXAMPLE.View.ProfilePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EXAMPLE.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" 
+      d:DesignWidth="730"
+      Background="Transparent"
+      Title="ProfilePage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320"/>
+            <ColumnDefinition Width="400"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <Image x:Name="ProfileImage" Source="{Binding LocalUserNow.IMAGE_PROFILE}"
+               Width="280" 
+                   Height="Auto"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+                   Margin="20, 18, 0, 0"/>
+            <Button Content="{DynamicResource ChangeImage}"
+                    Width="280"
+                    Height="40"
+                    HorizontalAlignment="Left"
+                    Margin="20, 20, 0, 0"
+                    FontSize="20"
+                    Style="{DynamicResource ForButtonSelectedBooks}"
+                    Command="{Binding ChangeProfileImage}"
+                    CommandParameter="{Binding ElementName=ProfileImage}"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <TextBlock Text="{DynamicResource PlugLogin}" 
+                           Margin="0, 14, 0, 0"
+                       Style="{DynamicResource TextPlug}"/>
+            <TextBlock Text="{Binding Path=LocalUserNow.LOGIN}"
+                       Margin="0, 0, 0, 0"
+                       Style="{DynamicResource TextInfo}"/>
+            <TextBlock Text="{DynamicResource PNText}" 
+                   Margin="0, 6, 0, 0"
+                   Style="{DynamicResource TextPlug}"/>
+            <TextBlock Text="{Binding Path=LocalUserNow.NAME}"
+                       Margin="0, 0, 20, 0"
+                       Style="{DynamicResource TextInfo}"/>
+            <TextBlock Text="{DynamicResource EmailText}" 
+                   Margin="0, 6, 0, 0"
+                         Style="{DynamicResource TextPlug}"/>
+            <TextBlock Text="{Binding Path=LocalUserNow.EMAIL}"
+                       Margin="0, 0, 0, 0"
+                       Style="{DynamicResource TextInfo}"/>
+            <TextBlock Text="{DynamicResource DateReg}" 
+                   Margin="0, 6, 0, 0"
+                          Style="{DynamicResource TextPlug}"/>
+            <TextBlock Text="{Binding Path=LocalUserNow.DATE_REGISTRATION, StringFormat='{}{0:dd.MM.yyyy}'}"
+                       Margin="0, 0, 0, 0"
+                           Style="{DynamicResource TextInfo}"/>
+            <TextBlock Text="{DynamicResource PhoneNumber}" 
+                   HorizontalAlignment="Left"
+                   Margin="0, 6, 0, 0"
+                       Style="{DynamicResource TextPlug}"/>
+            <TextBlock Text="{Binding Path=LocalUserNow.PHONE_NUMBER}"
+                       Margin="0, 0, 0, 0"
+                       Style="{DynamicResource TextInfo}"/>
+            <Button Content="{DynamicResource ChangeText}"
+                    Width="120" Height="40"
+                    FontSize="20"
+                    Margin="20, 14, 0, 0"
+                    Style="{DynamicResource ForButtonSelectedBooks}"
+                    Command="{Binding ChangeProfilePhoneNumber}"/>
+        </StackPanel>
+            
+            
+        </Grid>
+        
+</Page>

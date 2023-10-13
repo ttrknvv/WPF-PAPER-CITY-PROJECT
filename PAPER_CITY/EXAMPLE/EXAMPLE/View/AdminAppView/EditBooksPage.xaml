@@ -1,0 +1,345 @@
+﻿<Page x:Class="EXAMPLE.View.AdminAppView.EditBooksPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EXAMPLE.View.AdminAppView"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" 
+      d:DesignWidth="730"
+      Background="Transparent"
+      Title="EditBooksPage"
+      Name="PageEdit">
+
+    <Grid>
+        <Grid x:Name="ListBooks">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBox x:Name="FilterCatalog"
+                 Grid.Row="0"
+                 Style="{DynamicResource FilterStyleText}"
+                 HorizontalAlignment="Left"
+                 Margin="10, 0, 0, 0"
+                     TextChanged="FilterCatalog_TextChanged"/>
+            <Button Style="{DynamicResource ForButtonWithIconRefresh}"
+                    Margin="0, 0, 80, 0"
+                    HorizontalAlignment="Right"
+                    Command="{Binding DataContext.RefreshBook, RelativeSource={RelativeSource AncestorType=Page}}"/>
+            <Button x:Name="AddBook"
+                    Grid.Row="0"
+                    Style="{DynamicResource ForButtonWithIconAddBook}"
+                    HorizontalAlignment="Right"
+                    Margin="0, 0, 40, 0"
+                    Command="{Binding DataContext.AddNewBook, RelativeSource={RelativeSource AncestorType=Page}}"/>
+            <ComboBox Name="Sort"
+                          SelectedItem="1"
+                          Width="166"
+                      Height="24"
+                          Margin="300, 0, 0, 0"
+                          Style="{DynamicResource ComboboxStyle}"
+                          SelectedIndex="0" 
+                          Grid.Row="0"
+                          SelectionChanged="Sort_SelectionChanged">
+                <ComboBoxItem Name="NoSort"
+                                  Content="{DynamicResource NoSort}"/>
+                <ComboBoxItem Name="DescPriceSort"
+                                  Content="{DynamicResource DescPriceSort}"/>
+                <ComboBoxItem Name="IncreasePriceSort"
+                                  Content="{DynamicResource IncPriceSort}"/>
+                <ComboBoxItem Name="PopularitySort"
+                                  Content="{DynamicResource PopularitySort}"/>
+            </ComboBox>
+            <ListView x:Name="CatalogBooks"
+                  Background="Transparent"
+                  BorderThickness="0"
+                  Width="720"
+                  Grid.Row="1"
+                  ItemsSource="{Binding AllBooks}">
+                <ListView.Resources>
+                    <Style TargetType="ScrollBar">
+                        <Setter Property="Template" Value="{DynamicResource VerticalScrollBar}"/>
+                    </Style>
+                </ListView.Resources>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListViewItem}">
+                        <EventSetter Event="MouseDoubleClick" Handler="ListViewItem_MouseDoubleClick"/>
+                        <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="HorizontalAlignment" Value="Left"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="Width" Value="720"/>
+                            <Setter Property="Margin" Value="0, 6, 10, 10"/>
+                            <Setter Property="Height" Value="90"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ListViewItem">
+                                        <Border BorderThickness="0" HorizontalAlignment="Center" BorderBrush="Transparent" Background="{TemplateBinding Background}">
+                                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                                          Content="{TemplateBinding Content}" 
+                                                          ContentTemplate="{TemplateBinding ContentTemplate}" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#FF1B3E65"/>
+                                </Trigger>
+                            </Style.Triggers>
+
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Vertical" 
+                                HorizontalAlignment="Left"
+                               MaxWidth="{Binding ActualWidth, ElementName=CatalogBooks}"
+                               Height="Auto" 
+                               />
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel Orientation="Horizontal"
+                               Width="720"
+                               Margin="20, 0, 0, 0">
+                            <StackPanel Margin="10, 0, 0, 0"
+                                    Width="40">
+                                <TextBlock Text="Id"
+                                       Foreground="#FF9E788F"/>
+                                <TextBlock Text="{Binding ID_BOOK}"
+                                       Foreground="#FF96ADC8"/>
+                            </StackPanel>
+                            <Image Source="{Binding IMAGE_BOOK}"
+                               Width="50"
+                               Height="70"/>
+                            <StackPanel Margin="10, 0, 0, 0"
+                                    Width="200">
+                                <TextBlock Text="{DynamicResource NameText}"
+                                       Foreground="#FF9E788F"/>
+                                <TextBlock Text="{Binding NAME}"
+                                       Foreground="#FF96ADC8"/>
+                                <TextBlock Text="{DynamicResource AuthorBook}"
+                                       Foreground="#FF9E788F"/>
+                                <TextBlock Text="{Binding AUTHOR}"
+                                       Foreground="#FF96ADC8"/>
+                            </StackPanel>
+                            <StackPanel Margin="20, 0, 0, 0">
+                                <TextBlock Text="{DynamicResource GenreBook}"
+                                       Foreground="#FF9E788F"/>
+                                <TextBlock Text="{Binding GENRE}"
+                                       Foreground="#FF96ADC8"/>
+                                <TextBlock Text="{DynamicResource DateTestBuy}"
+                                       Foreground="#FF9E788F"/>
+                                <TextBlock Text="{Binding DATE_PUBLICATION, StringFormat='{}{0:dd.MM.yyyy}'}"
+                                       Foreground="#FF96ADC8"/>
+                            </StackPanel>
+                            <StackPanel Margin="20, 0, 0, 0">
+                                <TextBlock Text="{DynamicResource CostText}"
+                                       Foreground="#FF9E788F"/>
+                                <TextBlock Text="{Binding COST}"
+                                       Foreground="#FF96ADC8"/>
+                                <TextBlock Text="{DynamicResource CoofPopul}"
+                                       Foreground="#FF9E788F"/>
+                                <TextBlock Text="{Binding POPULARITY}"
+                                       Foreground="#FF96ADC8"/>
+                            </StackPanel>
+
+                        </WrapPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        <Grid x:Name="GridForBook"
+              Visibility="Collapsed"
+              Background="Transparent"
+              Width="{Binding ActualWidth, ElementName=catalogPage}"
+              >
+            <Button VerticalAlignment="Top"
+                    HorizontalAlignment="Left"
+                    Width="50"
+                    Height="50"
+                    Margin="20, 0, 0, 0"
+                    Style="{DynamicResource ForButtonWithIconBack}"
+                    Click="Button_Click"/>
+            <TabControl Margin="0, 50, 0, 0" 
+                        Background="Transparent" 
+                        BorderThickness="0" >
+                <TabItem Name="BookNowEdit"
+                         Style="{DynamicResource TabItemStyle}">
+                    <TabItem.Header>
+                        <TextBlock Text="{DynamicResource BookText}"/>
+                    </TabItem.Header>
+                    <TabItem.Content>
+                        <ListView x:Name="BookNowSelected"
+                          ItemsSource="{Binding BookNow}"
+                          Style="{DynamicResource ForListBookSelected}"
+                          Width="{Binding ActualWidth, ElementName=GridForBook}"
+                          ItemContainerStyle="{DynamicResource ForItemListBookSelected}"
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                          ScrollViewer.VerticalScrollBarVisibility="Auto"
+                          Height="Auto"
+                          Margin="0, 0, 0, 0">
+                            <ListView.Resources>
+                                <Style TargetType="ScrollBar">
+                                    <Setter Property="Template" Value="{DynamicResource VerticalScrollBar}"/>
+                                </Style>
+                            </ListView.Resources>
+                            <ListView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <Grid HorizontalAlignment="Left"
+                               MaxWidth="{Binding ActualWidth, ElementName=BookNowSelected}"
+                               Height="Auto" 
+                               />
+                                </ItemsPanelTemplate>
+                            </ListView.ItemsPanel>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Image x:Name="ImageBookNow"
+                                       Source="{Binding IMAGE_BOOK}"
+                                       Style="{DynamicResource ForImageBook}"
+                                       Margin="20,20 ,0, 0"/>
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBlock Text="{DynamicResource NameBook}"
+                                               Style="{DynamicResource ForTextPlug}"
+                                               Margin="230, 20, 40, 0"/>
+                                            <TextBlock x:Name="NameBook"
+                                                Text="{Binding NAME}"
+                                                Style="{DynamicResource ForBaseText}"
+                                                Margin="230, 5, 40, 0"/>
+                                            <TextBlock Text="{DynamicResource GenreBook}"
+                                               Style="{DynamicResource ForTextPlug}"
+                                               Margin="230, 10, 40, 0"/>
+                                            <TextBlock x:Name="GenreBook"
+                                               Text="{Binding GENRE}"
+                                               Style="{DynamicResource ForBaseText}"
+                                               Margin="230, 5, 40, 0"
+                                               />
+                                            <TextBlock Text="{DynamicResource AuthorBook}"
+                                               Style="{DynamicResource ForTextPlug}"  
+                                               Margin="230, 10, 40, 0"/>
+                                            <TextBlock x:Name="AuthorBook"
+                                               Text="{Binding AUTHOR}"
+                                               Style="{DynamicResource ForBaseText}"
+                                               Margin="230, 5, 40, 0"/>
+                                            <TextBlock Text="{DynamicResource DateBook}"
+                                               Style="{DynamicResource ForTextPlug}"
+                                               Margin="230, 10, 40, 0"/>
+                                            <TextBlock Text="{Binding DATE_PUBLICATION, StringFormat='{}{0:dd.MM.yyyy}'}"
+                                               Style="{DynamicResource ForBaseText}"
+                                               Margin="230, 5, 40, 0"/>
+                                            <TextBlock Text="{DynamicResource DescriptionBook}"
+                                               Style="{DynamicResource ForTextPlug}"
+                                               Margin="20, 30, 40, 0"/>
+                                            <TextBlock Text="{Binding DESCRIPTION}"
+                                               Style="{DynamicResource ForDesription}"
+                                               Margin="20, 5, 40, 0"
+                                               />
+                                            <WrapPanel Margin="20, 20, 0, 0">
+                                                <Button Content="{DynamicResource ChangeBookText}"
+                                                Height="50"
+                                                Width="180"
+                                                Style="{DynamicResource ForButtonSelectedBooks}"
+                                                        Command="{Binding DataContext.ChangeBook, RelativeSource={RelativeSource AncestorType=Page}}"/>  
+                                                <Button Style="{DynamicResource ForButtonWithIconDelete}"
+                                                        Margin="20, 0, 0, 0"
+                                                        Command="{Binding DataContext.RemoveBook, RelativeSource={RelativeSource AncestorType=Page}}"
+                                                        CommandParameter="{Binding ElementName=PageEdit}"/>
+                                            </WrapPanel>
+                                        </StackPanel>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </TabItem.Content>
+
+                </TabItem>
+                <TabItem Style="{DynamicResource TabItemStyle}">
+                    <TabItem.Header>
+                        <TextBlock Text="{DynamicResource ReviewBook}"/>
+                    </TabItem.Header>
+                    <TabItem.Content>
+                        <Grid>
+                            <TextBlock x:Name="ReviewPlug"
+                                               Text="{DynamicResource ReviewBook}"
+                                               Style="{DynamicResource ForTextPlug}"
+                                            Margin="26, 0, 20, 0"
+                                           FontSize="26"
+                                           FontWeight="DemiBold"/>
+                            <ListView x:Name="ReviewsList"
+                                          ItemsSource="{Binding DataContext.AllReviews, RelativeSource={RelativeSource AncestorType=Page}}"
+                                          Style="{DynamicResource ForListBookSelectedReview}"
+                                          Margin="20, 40, 0, 0"
+                                          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                      ScrollViewer.VerticalScrollBarVisibility="Auto">
+                                <ListView.ItemContainerStyle>
+                                    <Style TargetType="{x:Type ListViewItem}">
+                                        <EventSetter Event="MouseDoubleClick" Handler="ListViewItem_MouseDoubleClick_1"/>
+                                        <Setter Property="Background" Value="Transparent"/>
+                                        <Setter Property="Width" Value="700"/>
+                                        <Setter Property="Height" Value="Auto"/>
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="ListViewItem">
+                                                    <Border Name="Border" 
+                            Background="{TemplateBinding Background}">
+                                                        <ContentPresenter />
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="true">
+                                                <Setter Property="Background" Value="#FF1B3E65"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ListView.ItemContainerStyle>
+                                <ListView.Resources>
+                                    <Style TargetType="ScrollBar">
+                                        <Setter Property="Template" Value="{DynamicResource VerticalScrollBar}"/>
+                                    </Style>
+                                </ListView.Resources>
+                                <ListView.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel x:Name="ReviewsStackPanel"
+                                                        HorizontalAlignment="Left"
+                                                        MaxWidth="{Binding ActualWidth, ElementName=BookNowSelected}"
+                                                        Height="Auto" />
+                                    </ItemsPanelTemplate>
+                                </ListView.ItemsPanel>
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding LOGIN}"
+                                                           Name="NameReviws"
+                                                           Margin="6, 0, 0, 0"
+                                                           Style="{DynamicResource ForLoginReview}"/>
+                                            <TextBlock Text="{Binding DATE, StringFormat='{}{0:dd.MM.yyyy}'}"
+                                                           Name="NameReviws2"
+                                                           Margin="6, 0, 0, 10"
+                                                           Style="{DynamicResource ForDateReview}"
+                                                           FontSize="10"/>
+                                            <TextBlock Text="{Binding REVIEW_TEXT}"
+                                                           Name="TexteReviws"
+                                                           Margin="4, 0, 0, 14"
+                                                           Style="{DynamicResource ForTextReview}"
+                                                     />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </Grid>
+                        
+                    </TabItem.Content>
+                </TabItem>
+            </TabControl>
+            
+            
+
+        </Grid>
+    </Grid>
+</Page>

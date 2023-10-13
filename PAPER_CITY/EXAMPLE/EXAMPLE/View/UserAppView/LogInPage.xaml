@@ -1,0 +1,270 @@
+﻿<Page x:Class="EXAMPLE.View.LogInPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EXAMPLE.View"
+      mc:Ignorable="d" 
+      Style="{DynamicResource MainBackground}"
+      d:DesignHeight="390"
+      d:DesignWidth="365"
+      Title="LogInPage"
+      MouseLeave="Page_MouseLeave" 
+      MouseDown="Page_MouseDown" 
+      MouseEnter="Page_MouseEnter"
+      x:Name="PageLogIn">
+
+    <Grid>
+        <!--Описание макета-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="90"/>
+        </Grid.RowDefinitions>
+        <!--Обводка выбора страны-->
+        <Border Name="CountryButt" Grid.Row="0" Height="24" Width="40" 
+                HorizontalAlignment="Left" VerticalAlignment="Top" 
+                Margin="25, 15, 0, 0" CornerRadius="2"
+                BorderThickness="1" Style="{DynamicResource IconForSetting}">
+            <!--Кнопка выбора страны-->
+            <Button Name="ButtonCountry" Style="{DynamicResource ChoiceButton}" Click="ButtonCountry_Click">
+                <StackPanel x:Name="PanelForImageCountry" Orientation="Horizontal">
+                    <!-- Глобус -->
+                    <Image Name="Globe" Height="14" Width="14" Margin="5, 0, 0, 0" 
+                           Style="{DynamicResource GlobeStyle}"/>
+                    <!--Стрелка вниз-->
+                    <Image Name="DownArrow" Height="9" Width="9" Margin="6, 0, 5, 0"
+                           Style="{DynamicResource RowDownStyle}"/>
+                </StackPanel>
+            </Button>
+        </Border>
+
+        <!--Список стран-->
+        <Grid Name="menuCountry" Panel.ZIndex="998" Grid.Row="0" Height="160" Width="200" HorizontalAlignment="Left"
+              VerticalAlignment="Top" Margin="25, 42, 0, 0" Visibility="Hidden" MouseLeave="MenuCountry_MouseLeave">
+            <Polygon x:Name="BackMenuCountry" StrokeThickness="2" MouseLeave="MenuCountry_MouseLeave"
+                     Points="0, 8,
+                     0, 145,
+                     190, 145,
+                     190, 8,
+                     37, 8, 
+                     29, 0,
+                     21, 8" Style="{DynamicResource PolygonForListBack}"/>
+
+            <Polygon x:Name="FrontMenuCountry" StrokeThickness="1"
+                     Points="0, 8,
+                     0, 145,
+                     190, 145,
+                     190, 8,
+                     37, 8, 
+                     29, 0,
+                     21, 8" Style="{DynamicResource PolygonForListFront}"/>
+            <Grid x:Name="ListOfCountries" Height="132" Width="190" HorizontalAlignment="Left" VerticalAlignment="Top"
+                  Margin="0, 10, 0, 0">
+                <StackPanel x:Name="PanelCountries" Orientation="Vertical">
+                    <Button x:Name="ChoiseBelarus" Style="{DynamicResource ItemOfList}" Click="ChoiseBelarus_Click">
+                        <TextBlock Name="CountryBelarus" Text="{DynamicResource CountryBelarus}"/>
+                    </Button>
+                    <Button x:Name="ChoiseRussia" Style="{DynamicResource ItemOfList}" Click="ChoiseRussia_Click">
+                        <TextBlock Name="CountryRussia" Text="{DynamicResource CountryRussia}"/>
+                    </Button>
+                    <Button x:Name="ChoiseUkraine" Style="{DynamicResource ItemOfList}" Click="ChoiseUkraine_Click">
+                        <TextBlock Name="CountryUkraine" Text="{DynamicResource CountryUkraine}"/>
+                    </Button>
+                    <Button x:Name="ChoiseAmerica" Style="{DynamicResource ItemOfList}" Click="ChoiseAmerica_Click">
+                        <TextBlock Name="CountryAmerika" Text="{DynamicResource CountryAmerica}"/>
+                    </Button>
+                    <Polygon x:Name="StrokeDel" Fill="#FFFFFFFF" Points="0, 3
+                             190, 3" StrokeThickness="1" Style="{DynamicResource SeparatorCountryList}"/>
+                    <Button x:Name="NeedHelp" Style="{DynamicResource ItemOfList}" Margin="0, 3, 0, 0" Click="NeedHelp_Click">
+                        <TextBlock x:Name="needHelp" Text="{DynamicResource NeedHelp}"/>
+                    </Button>
+                </StackPanel>
+                <Image Name="CountryNowMetka" Grid.Row="2" Margin="18, 10,0, 0"
+                       Width="6" Height="6" VerticalAlignment="Top"
+                       HorizontalAlignment="Left" Style="{DynamicResource PropertyNowCircle}"/>
+            </Grid>
+        </Grid>
+
+        <!--Текст указывающий на выбор страны-->
+        <TextBlock Name="CountyTextNow" Text="{DynamicResource CountryNow}" Grid.Row="0" FontSize="14"
+                       Margin="75, 17, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top"
+                   Style="{DynamicResource CountryNowInText}"/>
+
+        <!--Кнопка настроек-->
+        <Border Name="SettingBorder" Grid.Row="0" Height="24" Width="25" 
+                HorizontalAlignment="Right" VerticalAlignment="Top" 
+                Margin="0, 15, 28, 0" CornerRadius="2"
+                BorderThickness="1" Style="{DynamicResource IconForSetting}">
+            <!--Кнопка выбора настроек-->
+            <Button Name="ButtonSetting" Style="{DynamicResource ChoiceButton}" Click="ButtonSetting_Click">
+                <StackPanel x:Name="PanelForGear" Orientation="Horizontal">
+                    <!-- Шестеренка -->
+                    <Image Name="Settings" Height="16" Width="16" Margin="5, 0, 5, 0" 
+                           Style="{DynamicResource Cogwheel}"/>
+                </StackPanel>
+            </Button>
+        </Border>
+
+        <!--Меню настроек-->
+        <Grid Name="SettingMenu" Panel.ZIndex="999" Grid.Row="0" Height="125" Width="310" HorizontalAlignment="Right"
+              VerticalAlignment="Top" Margin="0, 42, 20 0" Visibility="Hidden" MouseLeave="SettingMenu_MouseLeave" MouseEnter="SettingMenu_MouseEnter">
+            <Polygon x:Name="RectForListBack" StrokeThickness="2" HorizontalAlignment="Center" Style="{DynamicResource PolygonForListBack}"
+                     Points="0, 8,
+                     0, 62,
+                     300, 62,
+                     300, 8,
+                     295, 8, 
+                     287, 0,
+                     279, 8"/>
+            <Polygon x:Name="RectForListFront" StrokeThickness="1" Margin="4, 0, 0, 0" Style="{DynamicResource PolygonForListFront}"
+                     Points="0, 8,
+                     0, 62,
+                     300, 62,
+                     300, 8,
+                     295, 8, 
+                     287, 0,
+                     279, 8"/>
+            <Grid x:Name="RectListSetting" Height="55" Width="295" HorizontalAlignment="Center" VerticalAlignment="Top"
+                  Margin="0, 10, 2, 0">
+                <StackPanel x:Name="PanelSetting" Orientation="Vertical">
+                    <Button x:Name="ChangeTheme" Style="{DynamicResource ItemOfList}" Click="ChangeTheme_Click">
+                        <TextBlock Text="{DynamicResource ChangeThemeFromDark}"/>
+                    </Button>
+                    <Button x:Name="ChangeLanguage" Style="{DynamicResource ItemOfList}" Click="ChangeLanguage_Click">
+                        <TextBlock Text="{DynamicResource ChangeLanguage}"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <!--Смена языка(список)-->
+        <Grid Panel.ZIndex="998" Grid.Row="0" Height="70" Width="200" HorizontalAlignment="Right" 
+              VerticalAlignment="Center" Visibility="Hidden" Name="menuLanguage"
+               Margin="0, 0, 80, 20" MouseLeave="MenuLanguage_MouseLeave">
+            <Polygon StrokeThickness="1"
+                     Margin="0" Points="0, 8,
+                     0, 70,
+                     200, 70, 
+                     200, 8,
+                     4, 8, 
+                     10, 0,
+                     20, 8
+                     " Style="{DynamicResource PolygonForListFront}"/>
+            <Grid x:Name="GridForLanguage" Height="50" Width="200" HorizontalAlignment="Right" VerticalAlignment="Center"
+                  Margin="0, 6, 0, 0">
+                <StackPanel x:Name="PanelForLanguage" Orientation="Vertical">
+                    <Button x:Name="ChoiseRussian" Style="{DynamicResource ItemOfList}" Click="ChoiseRussian_Click">
+                        <TextBlock Text="{DynamicResource RussianLanguage}"/>
+                    </Button>
+                    <Button x:Name="ChoiseEnglish" Style="{DynamicResource ItemOfList}" Click="ChoiseEnglish_Click">
+                        <TextBlock Text="{DynamicResource EnglishLanguage}"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <Image Name="LanguageNow" Grid.Row="2" Margin="14, 24,0, 0" Panel.ZIndex="999"
+                       Width="6" Height="6" VerticalAlignment="Top"
+                       HorizontalAlignment="Left" Style="{DynamicResource PropertyNowCircle}"/>
+        </Grid>
+        <!--Для логина форма-->
+        <TextBox Name="LoginText" Grid.Row="0" Style="{DynamicResource GetDataUser}"
+                 Margin="25, 55, 25, 0" VerticalAlignment="Top"/>
+        <!--Заглушка логина-->
+        <TextBlock x:Name="PlugOfLogin" IsHitTestVisible="False" FontSize="14" Text="{DynamicResource PlugLogin}"
+                   Grid.Row="0" Margin="37, 63, 0, 0" VerticalAlignment="Top" 
+                   Style="{DynamicResource PlugText}"/>
+        <!--Для пароля форма с заменой символов-->
+        <PasswordBox x:Name="PasswordTextStars" Grid.Row="0" Style="{DynamicResource ForPasswordSec}"
+                 Margin="25, 100, 25, 0" VerticalAlignment="Top" PasswordChanged="PasswordTextStars_PasswordChanged"/>
+        <!--Для пароля форма без замены символов-->
+        <TextBox x:Name="PasswordText" Grid.Row="0" Style="{DynamicResource GetDataUser}"
+                 Margin="25, 100, 25, 0" VerticalAlignment="Top" Visibility="Hidden" TextChanged="PasswordText_TextChanged"/>
+        <!--Заглушка пароля-->
+        <TextBlock x:Name="PlugPassword" IsHitTestVisible="False" FontSize="14" Text="{DynamicResource PlugPassword}"
+                   Grid.Row="0" Margin="37, 108, 0, 0" VerticalAlignment="Top" 
+                   Style="{DynamicResource PlugTextt}"/>
+        <!--Кнопка показать пароль-->
+        <ToggleButton Name="ShowPassword" Grid.Row="0" Height="30" Width="140" 
+                      HorizontalAlignment="Left" VerticalAlignment="Top"
+                      Margin="25, 145, 0, 0" Content="{DynamicResource ShowPassword}" 
+                      FontSize="13" Style="{DynamicResource ShowPassColor}" Click="ShowPassword_Click" MouseEnter="ShowPassword_MouseEnter">
+            <ToggleButton.Template>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <StackPanel Orientation="Horizontal">
+                        <Border Name="BorderButtonShowPass" Height="20" Width="20" 
+                HorizontalAlignment="Left" Style="{DynamicResource ShowPasswordBorder}"
+                CornerRadius="2" BorderThickness="1">
+                            <Image x:Name="MarkCheck" Margin="4" Style="{DynamicResource ShowPassMark}"/>
+                        </Border>
+                        <ContentPresenter Content="{TemplateBinding Content}" Margin="10, 0, 0, 0" VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </ToggleButton.Template>
+        </ToggleButton>
+        <!--Диалоговое окно-->
+        <Grid  Grid.Row="0" Background="Transparent" Name="ErrorBlockBorder" Height="40" Width="230" 
+                VerticalAlignment="Center" HorizontalAlignment="Center" 
+               Margin="100, 18, 0, 0" Opacity="1" Visibility="Hidden">
+            <Polygon Name="ErrorBlock" Style="{DynamicResource NoCorrect}"
+                  VerticalAlignment="Bottom" HorizontalAlignment="Center"
+                 Points="0, 20,
+                 230, 20,
+                 230, 50,
+                 110, 50,
+                 120, 56,
+                 130, 50,
+                 0, 50">
+            </Polygon>
+            <TextBlock FontSize="14" HorizontalAlignment="Center" 
+                       VerticalAlignment="Center" Margin="0, 0, 0, 4"
+                       Text="{DynamicResource NotCorrect}" Style="{DynamicResource StyleForButtonFrame}"/>
+        </Grid>
+
+        <!--Кнопка авторизоваться-->
+        <Border Name="GetAuth" 
+                Grid.Row="0" 
+                Height="35" 
+                VerticalAlignment="Bottom"
+                Margin="25, 0, 25, 85" 
+                Style="{DynamicResource AuthificBorder}"
+                BorderThickness="1" CornerRadius="2">
+            <!--Сама кнопка-->
+            <Button x:Name="Auther" Content="{DynamicResource LogIn}" FontSize="16"
+                    Style="{DynamicResource ButtonForAutherization}" 
+                    MouseEnter="Auther_MouseEnter"
+                    Command="{Binding LogInUser}"
+                    CommandParameter="{Binding ElementName=PageLogIn}"/>
+        </Border>
+        <!--Линия войти через-->
+        <Polygon Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                 Style="{DynamicResource LineLoginFrom}" Points="0, 0
+                 330, 0" Margin="25, 0, 25, 60"/>
+        <!--Текст войти через-->
+        <TextBlock Name="AutheSec" Text="{DynamicResource OrInFrom}" Grid.Row="0" VerticalAlignment="Bottom"
+                   HorizontalAlignment="Center" FontSize="15" TextAlignment="Center" 
+                   Margin="0, 0, 0, 53" Width="160" Style="{DynamicResource TextLoginFrom}"
+                   FontWeight="DemiBold"/>
+        <!--Зайти через гугл-->
+        <Border Name="InpGoogle" Grid.Row="0" Height="35"
+                Margin="95, 245, 95, 0" 
+                BorderThickness="1" CornerRadius="2">
+            <!--Сама кнопка-->
+            <Button x:Name="GoogleButton" Style="{DynamicResource LoginFromGoogleButton}" Click="GoogleButton_Click">
+                <StackPanel Orientation="Horizontal" >
+                    <Image Height="24" Width="24" Style="{DynamicResource IconGoogle}"/>
+                    <Label Content="{DynamicResource TextGoogle}" FontSize="16" Style="{DynamicResource TextGoogleStyle}"/>
+                </StackPanel>
+            </Button>
+        </Border>
+        <!--Кнопка регистрации-->
+        <TextBlock Name="LogupNew" VerticalAlignment="Center" HorizontalAlignment="Center"
+        Grid.Row="1" Text="{DynamicResource CreateNewAccount}" 
+                   FontSize="16" FontWeight="DemiBold" 
+                   Margin="0, 0, 0, 55"
+                   Style="{DynamicResource StyleDownButton}" 
+                   MouseDown="LogupNew_MouseDown"/>
+        <!--Кнопка вы не можете войти-->
+        <TextBlock Name="Problems" VerticalAlignment="Center" HorizontalAlignment="Center"
+        Grid.Row="1" Text="{DynamicResource ProblemInFrom}" FontSize="16" FontWeight="DemiBold" 
+                   Margin="0, 5, 0, 0" Style="{DynamicResource StyleDownButton}" MouseDown="Problems_MouseDown"/>
+    </Grid>
+</Page>

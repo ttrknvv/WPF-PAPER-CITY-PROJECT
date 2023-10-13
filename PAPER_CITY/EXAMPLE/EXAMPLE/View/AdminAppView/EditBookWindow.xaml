@@ -1,0 +1,119 @@
+﻿<Window x:Class="EXAMPLE.View.AdminAppView.EditBookWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EXAMPLE.View.AdminAppView"
+        mc:Ignorable="d"
+        Title="EditBookWindow" 
+        Height="660" 
+        Width="760"
+        Name="EditBook"
+        Background="#FFB8CEE7"
+        Icon="D:\2k2s\COURSE_PROJECT\SOURCE\PHOTOES\addBookUnactive.png"
+        ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel>
+            <WrapPanel>
+                <Border Width="200"
+                        Height="300"
+                        Margin="20, 0, 0, 0">
+                    <Image Name="BookSelectImage"
+               Width="200"
+               Height="300"
+               HorizontalAlignment="Left"
+               Margin="0, 0, 0, 0"
+                           MouseDown="BookSelectImage_MouseDown"/>
+                </Border>
+
+                <StackPanel Margin="20, 0, 0, 0"
+                        Width="500">
+                    <TextBlock Text="{DynamicResource NameBook}"
+                           Foreground="Black"
+                           FontSize="20"
+                           Margin="0, 10, 0, 10"/>
+                    <TextBox x:Name="NameBook"
+                         Style="{DynamicResource ForBuyBook}"
+                         HorizontalAlignment="Left"
+                         Height="30"
+                             FontSize="16"/>
+                    <TextBlock Text="{DynamicResource AuthorBook}"
+                           Foreground="Black"
+                           FontSize="20"
+                           Margin="0, 10, 0, 10"/>
+                    <TextBox x:Name="AuthorBook"
+                         Style="{DynamicResource ForBuyBook}"
+                         HorizontalAlignment="Left"
+                         Height="30"
+                             FontSize="16"/>
+                    <TextBlock Text="{DynamicResource GenreBook}"
+                           Foreground="Black"
+                           FontSize="20"
+                           Margin="0, 10, 0, 10"/>
+                    <TextBox x:Name="GenreBook"
+                         Style="{DynamicResource ForBuyBook}"
+                         HorizontalAlignment="Left"
+                         Height="30"
+                             FontSize="16"/>
+                    <TextBlock Text="{DynamicResource CostText}"
+                           Foreground="Black"
+                           FontSize="20"
+                           Margin="0, 10, 0, 10"/>
+                    <TextBox x:Name="CostBook"
+                         Style="{DynamicResource ForBuyBook}"
+                         HorizontalAlignment="Left"
+                         Height="30"
+                             FontSize="16"
+                             TextChanged="CostBook_TextChanged"/>
+                </StackPanel>
+            </WrapPanel>
+            <TextBlock Text="{DynamicResource DescriptionBook}"
+                   FontSize="20"
+                       Margin="20, 0, 0, 0"/>
+            <TextBox x:Name="DescriptionBook"
+                     Style="{DynamicResource ReviewStyleText}"
+                     HorizontalAlignment="Left"
+                     Height="130"
+                     Width="540"
+                     Margin="20, 10, 0, 0"/>
+            <TextBlock Text="{DynamicResource PathBook}"
+                   FontSize="20"
+                       Margin="20, 10, 0, 0"/>
+            <WrapPanel>
+                <TextBox x:Name="PathDownload"
+                     Style="{DynamicResource ForBuyBook}"
+                     HorizontalAlignment="Left"
+                     Height="30"
+                     Width="340"
+                     Margin="20, 10, 0, 0"
+                         FontSize="16"
+                         TextChanged="PathDownload_TextChanged"/>
+                <Button x:Name="VerifyPath"
+                    Style="{DynamicResource ButtonBuy}"
+                        Content="{DynamicResource IndicateBook}"
+                        Margin="20, 0, 0, 0"
+                        Height="30"
+                        VerticalAlignment="Bottom"
+                        FontSize="18"
+                        Click="VerifyPath_Click"/>
+            </WrapPanel>
+
+            <WrapPanel>
+                <Button x:Name="AddBook"
+                    Style="{DynamicResource ButtonBuy}"
+                        Content="{DynamicResource ChangeText}"
+                        Margin="20, 20, 0, 0"
+                        Click="AddBook_Click"/>
+                <Button x:Name="NoAddBook"
+                    Style="{DynamicResource ButtonBuy}"
+                        Content="{DynamicResource Cansel}"
+                        Margin="20, 20, 0, 0"
+                        Click="NoAddBook_Click"/>
+            </WrapPanel>
+
+        </StackPanel>
+
+
+        </Grid>
+</Window>

@@ -1,0 +1,78 @@
+﻿<Window x:Class="EXAMPLE.View.FormForBuyBook"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EXAMPLE.View"
+        mc:Ignorable="d"
+        Title="FormForBuyBook" 
+        Background="#FFB8CEE7"
+        Height="380" 
+        Width="400" 
+        ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen" Icon="/View/UserAppView/addBookUnactive.png">
+    <Grid>
+        <StackPanel>
+            <TextBlock Name="NumberPlug"
+                   Text="{DynamicResource NumberCard}"
+                   Foreground="Black"
+                   HorizontalAlignment="Left"
+                   FontSize="20"
+                   Margin="50, 10, 0, 0"
+                   Width="160"
+                   Panel.ZIndex="999"
+                    IsHitTestVisible="False"/>
+            <TextBox Name="NumberCard"
+                 VerticalAlignment="Top"
+                 Margin="0, 6, 0, 0" 
+                 Style="{DynamicResource ForBuyBook}"
+                 VerticalContentAlignment="Center"/>
+            <TextBlock Name="DatePlug"
+                   Text="{DynamicResource DateCard}"
+                   Foreground="Black"
+                       HorizontalAlignment="Left"
+                   FontSize="20"
+                   Margin="50, 6, 0, 0"
+                   Width="160"
+                   Panel.ZIndex="999"
+                    IsHitTestVisible="False"/>
+            <TextBox Name="Date"
+                 VerticalAlignment="Top"
+                 Margin="0, 6, 0, 0" 
+                 Style="{DynamicResource ForBuyBook}"
+                 VerticalContentAlignment="Center"/>
+            <TextBlock Name="NamePlug"
+                   Text="{DynamicResource NameOwnerCard}"
+                   Foreground="Black"
+                   HorizontalAlignment="Left"
+                   FontSize="20"
+                   Margin="50, 6, 0, 0"
+                   Width="170"
+                   Panel.ZIndex="999"
+                    IsHitTestVisible="False"/>
+            <TextBox Name="NameOwner"
+                 VerticalAlignment="Top"
+                 Margin="0, 6, 0, 0" 
+                 Style="{DynamicResource ForBuyBook}"
+                 VerticalContentAlignment="Center"/>
+            <WrapPanel Orientation="Horizontal" 
+                    HorizontalAlignment="Center"
+                    Margin="0, 14, 0, 0"
+                    Height="40">
+                <Button Name="Ok"
+                        Content="{DynamicResource BuyBook}"
+                        Style="{DynamicResource ButtonBuy}"
+                        Click="Ok_Click"
+                />
+                <Button Name="NotOk"
+                        Content="{DynamicResource Cansel}"
+                        Style="{DynamicResource ButtonBuy}"
+                        Margin="40, 0, 0, 0" 
+                        Click="NotOk_Click"/>
+            </WrapPanel>
+        </StackPanel>
+        
+        
+        
+    </Grid>
+</Window>

@@ -1,0 +1,36 @@
+﻿<Page x:Class="EXAMPLE.View.AdminAppView.MainPageAdmin"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EXAMPLE.View.AdminAppView"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" 
+      d:DesignWidth="730"
+      Background="Transparent"
+      Title="MainPageAdmin">
+
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="{DynamicResource MainText1}"
+                       TextAlignment="Center"
+                       FontSize="25"
+                       TextWrapping="Wrap"
+                       Foreground="#FF9E788F"
+                       FontWeight="Bold"
+                       Height="66"/>
+            <TextBlock Text="{DynamicResource MainText2}"
+                       Margin="0, 36, 0, 0"
+                       Style="{DynamicResource DescripVkl}"/>
+            <TextBlock Text="{DynamicResource MainText3}"
+                       Style="{DynamicResource DescripVkl}"
+                       Margin="0, 38, 0, 0"/>
+            <TextBlock Text="{DynamicResource MainText4}"
+                       Margin="0, 200, 0, 0"
+                       Style="{DynamicResource DescripVkl}"/>
+            <TextBlock Text="{DynamicResource MainText5}"
+                       Style="{DynamicResource DescripVkl}"
+                       Margin="0, 40, 0, 0"/>
+        </StackPanel>
+    </Grid>
+</Page>

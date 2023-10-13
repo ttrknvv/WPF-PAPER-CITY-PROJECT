@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="View\AdminAppView\AcceptBuyPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AdminAppView\AddBookWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AdminAppView\AdminMainWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AdminAppView\DelereReviewWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AdminAppView\EditBooksPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AdminAppView\EditBookWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AdminAppView\MainPageAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AdminAppView\SendMessageToUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AdminAppView\SendRequestPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AdminAppView\UserListPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AdminAppView\VerifyPaymentWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\UserAppView\BasketPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\UserAppView\CatalogPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\UserAppView\FormForBuyBook.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\UserAppView\HelpPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\UserAppView\InputPhoneNumber.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\UserAppView\LogInPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\UserAppView\LogUpPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\UserAppView\MainPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\UserAppView\ProfilePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\UserAppView\VerifyEmailWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\UserAppView\WindowInputUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Languages\EnglishVersion.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Languages\RussianVersion.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\DarkThemeLog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\LightThemeLog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AdminAppView\AcceptBuyPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AdminAppView\AddBookWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AdminAppView\AdminMainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AdminAppView\DelereReviewWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AdminAppView\EditBooksPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AdminAppView\EditBookWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AdminAppView\MainPageAdmin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AdminAppView\SendMessageToUser.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AdminAppView\SendRequestPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AdminAppView\UserListPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AdminAppView\VerifyPaymentWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserAppView\BasketPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserAppView\CatalogPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserAppView\FormForBuyBook.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserAppView\HelpPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserAppView\InputPhoneNumber.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserAppView\LogInPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserAppView\LogUpPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserAppView\MainPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserAppView\UserMainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserAppView\ProfilePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserAppView\VerifyEmailWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserAppView\WindowInputUser.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

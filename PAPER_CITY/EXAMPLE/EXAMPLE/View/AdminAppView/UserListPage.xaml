@@ -1,0 +1,213 @@
+﻿<Page x:Class="EXAMPLE.View.AdminAppView.UserListPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EXAMPLE.View.AdminAppView"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" 
+      d:DesignWidth="730"
+      Background="Transparent"
+      Title="UserListPage">
+
+    <Grid>
+        <Grid x:Name="GridListUsers">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBox x:Name="FilterCatalog"
+                 Grid.Row="0"
+                 Style="{DynamicResource FilterStyleText}"
+                 HorizontalAlignment="Left"
+                 Margin="10, 0, 0, 0"
+                     TextChanged="FilterCatalog_TextChanged"/>
+            <Button Style="{DynamicResource ForButtonWithIconRefresh}"
+                    Margin="0, 0, 80, 0"
+                    HorizontalAlignment="Right"
+                    Command="{Binding RefreshUsers}"/>
+            <ListView x:Name="ListUsers"
+                  Background="Transparent"
+                  BorderThickness="0"
+                  Width="720"
+                  Grid.Row="1"
+                  ItemsSource="{Binding AllUsers}">
+                <ListView.Resources>
+                    <Style TargetType="ScrollBar">
+                        <Setter Property="Template" Value="{DynamicResource VerticalScrollBar}"/>
+                    </Style>
+                </ListView.Resources>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListViewItem}">
+                        <EventSetter Event="MouseDoubleClick" Handler="ListViewItem_MouseDoubleClick"/>
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="HorizontalAlignment" Value="Left"/>
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                        <Setter Property="Width" Value="720"/>
+                        <Setter Property="Margin" Value="0, 6, 10, 10"/>
+                        <Setter Property="Height" Value="90"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListViewItem">
+                                    <Border BorderThickness="0" HorizontalAlignment="Center" BorderBrush="Transparent" Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                                          Content="{TemplateBinding Content}" 
+                                                          ContentTemplate="{TemplateBinding ContentTemplate}" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF1B3E65"/>
+                            </Trigger>
+                        </Style.Triggers>
+
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Vertical" 
+                                HorizontalAlignment="Left"
+                               MaxWidth="{Binding ActualWidth, ElementName=CatalogBooks}"
+                               Height="Auto" 
+                               />
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel Orientation="Horizontal"
+                               Width="720"
+                               Margin="20, 0, 0, 0">
+                            <StackPanel Margin="0, 4, 0, 0"
+                                    Width="40">
+                                <TextBlock Text="Id"
+                                       Foreground="#FF9E788F"/>
+                                <TextBlock Text="{Binding ID_USER}"
+                                       Foreground="#FF96ADC8"/>
+                            </StackPanel>
+                            <Image Source="{Binding IMAGE_PROFILE}"
+                               Width="70"
+                               Height="70"
+                                   Stretch="Fill"/>
+                            <StackPanel Margin="10, 0, 0, 0"
+                                    Width="300">
+                                <TextBlock Text="{DynamicResource PlugLogin}"
+                                       Foreground="#FF9E788F"/>
+                                <TextBlock Text="{Binding LOGIN}"
+                                       Foreground="#FF96ADC8"/>
+                                <TextBlock Text="Email"
+                                       Foreground="#FF9E788F"/>
+                                <TextBlock Text="{Binding EMAIL}"
+                                       Foreground="#FF96ADC8"/>
+                            </StackPanel>
+                            <StackPanel Margin="20, 0, 0, 0">
+                                <TextBlock Text="{DynamicResource Phone}"
+                                       Foreground="#FF9E788F"/>
+                                <TextBlock Text="{Binding PHONE_NUMBER}"
+                                       Foreground="#FF96ADC8"/>
+                                <TextBlock Text="{DynamicResource DateReg}"
+                                       Foreground="#FF9E788F"/>
+                                <TextBlock Text="{Binding DATE_REGISTRATION, StringFormat='{}{0:dd.MM.yyyy}'}"
+                                       Foreground="#FF96ADC8"/>
+                            </StackPanel>
+
+                        </WrapPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        <Grid x:Name="GridForUser"
+              Visibility="Collapsed"
+              Background="Transparent"
+              Width="{Binding ActualWidth, ElementName=catalogPage}"
+              >
+            <Button VerticalAlignment="Top"
+                    HorizontalAlignment="Left"
+                    Width="50"
+                    Height="50"
+                    Margin="20, 0, 0, 0"
+                    Style="{DynamicResource ForButtonWithIconBack}"
+                    Click="Button_Click"/>
+                        <ListView x:Name="UserNowSelected"
+                          ItemsSource="{Binding DataContext.UserNow, RelativeSource={RelativeSource AncestorType=Page}}"
+                          Style="{DynamicResource ForListBookSelected}"
+                          Width="{Binding ActualWidth, ElementName=GridForBook}"
+                          ItemContainerStyle="{DynamicResource ForItemListBookSelected}"
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                          ScrollViewer.VerticalScrollBarVisibility="Auto"
+                          Height="Auto"
+                          Margin="0, 40, 0, 0">
+                            <ListView.Resources>
+                                <Style TargetType="ScrollBar">
+                                    <Setter Property="Template" Value="{DynamicResource VerticalScrollBar}"/>
+                                </Style>
+                            </ListView.Resources>
+                            <ListView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <Grid HorizontalAlignment="Left"
+                               MaxWidth="{Binding ActualWidth, ElementName=BookNowSelected}"
+                               Height="Auto" 
+                               />
+                                </ItemsPanelTemplate>
+                            </ListView.ItemsPanel>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Image x:Name="ImageProfileNow"
+                                       Source="{Binding IMAGE_PROFILE}"
+                                       Style="{DynamicResource ForImageBook}"
+                                               Stretch="Uniform"
+                                       Margin="20,20 ,0, 0"/>
+                                        <StackPanel Orientation="Vertical"
+                                                    Margin="30, 0, 0, 0">
+                                            <TextBlock Text="{DynamicResource PlugLogin}"
+                                               Style="{DynamicResource ForTextPlug}"
+                                               Margin="230, 20, 40, 0"/>
+                                            <TextBlock x:Name="NameBook"
+                                                Text="{Binding LOGIN}"
+                                                Style="{DynamicResource ForBaseText}"
+                                                Margin="230, 5, 40, 0"/>
+                                            <TextBlock Text="{DynamicResource PlugPersName}"
+                                               Style="{DynamicResource ForTextPlug}"
+                                               Margin="230, 10, 40, 0"/>
+                                            <TextBlock x:Name="GenreBook"
+                                               Text="{Binding NAME}"
+                                               Style="{DynamicResource ForBaseText}"
+                                               Margin="230, 5, 40, 0"
+                                               />
+                                            <TextBlock Text="{DynamicResource Phone}"
+                                               Style="{DynamicResource ForTextPlug}"  
+                                               Margin="230, 10, 40, 0"/>
+                                            <TextBlock x:Name="AuthorBook"
+                                               Text="{Binding PHONE_NUMBER}"
+                                               Style="{DynamicResource ForBaseText}"
+                                               Margin="230, 5, 40, 0"/>
+                                            <TextBlock Text="{DynamicResource DateRegUser}"
+                                               Style="{DynamicResource ForTextPlug}"
+                                               Margin="230, 10, 40, 0"/>
+                                            <TextBlock Text="{Binding DATE_REGISTRATION, StringFormat='{}{0:dd.MM.yyyy}'}"
+                                               Style="{DynamicResource ForBaseText}"
+                                               Margin="230, 5, 40, 0"/>
+                                            <TextBlock Text="{DynamicResource EmailText}"
+                                               Style="{DynamicResource ForTextPlug}"
+                                               Margin="0, 20, 40, 0"/>
+                                 <TextBlock Text="{Binding EMAIL}"
+                                               Style="{DynamicResource ForDesription}"
+                                               Margin="0, 5, 40, 0"
+                                               />
+                                                <Button Content="{DynamicResource SendToUser}"
+                                                Height="50"
+                                                Width="300"
+                                                Style="{DynamicResource ForButtonSelectedBooks}"
+                                                        Command="{Binding DataContext.SendMessage, RelativeSource={RelativeSource AncestorType=Page}}"
+                                                        Margin="0, 20, 0, 0"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+        </Grid>
+    </Grid>
+</Page>

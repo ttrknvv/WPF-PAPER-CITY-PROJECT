@@ -1,0 +1,168 @@
+﻿<Page x:Class="EXAMPLE.View.LogUpPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EXAMPLE.View"
+      mc:Ignorable="d" 
+      Style="{DynamicResource MainBackground}"
+      d:DesignHeight="390" 
+      d:DesignWidth="365"
+      Title="LogUpPage"
+      x:Name="LogUpPageElem">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="390"/>
+        </Grid.RowDefinitions>
+        <!--Кнопка настроек-->
+        <Border Name="SettingBorder" Grid.Row="0" Height="24" Width="25" 
+                HorizontalAlignment="Right" VerticalAlignment="Top" 
+                Margin="0, 15, 28, 0" CornerRadius="2"
+                BorderThickness="1" Style="{DynamicResource IconForSetting}">
+            <!--Кнопка выбора настроек-->
+            <Button Name="ButtonSetting" Style="{DynamicResource ChoiceButton}" Click="ButtonSetting_Click">
+                <StackPanel x:Name="PanelForGear" Orientation="Horizontal">
+                    <!-- Шестеренка -->
+                    <Image Name="Settings" Height="16" Width="16" Margin="5, 0, 5, 0" 
+                           Style="{DynamicResource Cogwheel}"/>
+                </StackPanel>
+            </Button>
+        </Border>
+
+        <!--Меню настроек-->
+        <Grid Name="SettingMenu" Panel.ZIndex="999" Grid.Row="0" Height="125" Width="310" HorizontalAlignment="Right"
+              VerticalAlignment="Top" Margin="0, 42, 20 0" Visibility="Hidden" MouseLeave="SettingMenu_MouseLeave" MouseEnter="SettingMenu_MouseEnter">
+            <Polygon x:Name="RectForListBack" StrokeThickness="2" HorizontalAlignment="Center" Style="{DynamicResource PolygonForListBack}"
+                     Points="0, 8,
+                     0, 62,
+                     300, 62,
+                     300, 8,
+                     295, 8, 
+                     287, 0,
+                     279, 8"/>
+            <Polygon x:Name="RectForListFront" StrokeThickness="1" Margin="4, 0, 0, 0" Style="{DynamicResource PolygonForListFront}"
+                     Points="0, 8,
+                     0, 62,
+                     300, 62,
+                     300, 8,
+                     295, 8, 
+                     287, 0,
+                     279, 8"/>
+            <Grid x:Name="RectListSetting" Height="55" Width="295" HorizontalAlignment="Center" VerticalAlignment="Top"
+                  Margin="0, 10, 2, 0">
+                <StackPanel x:Name="PanelSetting" Orientation="Vertical">
+                    <Button x:Name="ChangeTheme" Style="{DynamicResource ItemOfList}" Click="ChangeTheme_Click">
+                        <TextBlock Text="{DynamicResource ChangeThemeFromDark}"/>
+                    </Button>
+                    <Button x:Name="ChangeLanguage" Style="{DynamicResource ItemOfList}" Click="ChangeLanguage_Click">
+                        <TextBlock Text="{DynamicResource ChangeLanguage}"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <!--Смена языка(список)-->
+        <Grid Panel.ZIndex="998" Grid.Row="0" Height="70" Width="200" HorizontalAlignment="Right" 
+              VerticalAlignment="Center" Visibility="Hidden" Name="menuLanguage"
+               Margin="0, 0, 80,105" MouseLeave="menuLanguage_MouseLeave">
+            <Polygon StrokeThickness="1"
+                     Margin="0" Points="0, 8,
+                     0, 70,
+                     200, 70, 
+                     200, 8,
+                     4, 8, 
+                     10, 0,
+                     20, 8
+                     " Style="{DynamicResource PolygonForListFront}"/>
+            <Grid x:Name="GridForLanguage" Height="50" Width="200" HorizontalAlignment="Right" VerticalAlignment="Center"
+                  Margin="0, 6, 0, 0">
+                <StackPanel x:Name="PanelForLanguage" Orientation="Vertical">
+                    <Button x:Name="ChoiseRussian" Style="{DynamicResource ItemOfList}" Click="ChoiseRussian_Click">
+                        <TextBlock Text="{DynamicResource RussianLanguage}"/>
+                    </Button>
+                    <Button x:Name="ChoiseEnglish" Style="{DynamicResource ItemOfList}" Click="ChoiseEnglish_Click">
+                        <TextBlock Text="{DynamicResource EnglishLanguage}"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <Image Name="LanguageNow" Grid.Row="2" Margin="14, 24,0, 0" Panel.ZIndex="999"
+                       Width="6" Height="6" VerticalAlignment="Top"
+                       HorizontalAlignment="Left" Style="{DynamicResource PropertyNowCircle}"/>
+        </Grid>
+        <!--Текст регистрация-->
+        <TextBlock x:Name="registerNew" Grid.Row="0" Text="{DynamicResource CreateNewAccount}"
+                   Style="{DynamicResource WordReg}"
+                   Margin="25, 15, 0, 0" HorizontalAlignment="Left"
+                   Width="300" VerticalAlignment="Top"
+                   Height="26"/>
+
+        <!--Поле логина-->
+        <TextBox Name="LoginText" Grid.Row="0" Style="{DynamicResource GetDataUser}"
+                 Margin="25, 50, 25, 0" VerticalAlignment="Top" 
+                 TextChanged="LoginText_TextChanged" MaxLength="20"/>
+        <!--Заглушка логина-->
+        <TextBlock x:Name="PlugOfLogin" IsHitTestVisible="False" FontSize="14" Text="{DynamicResource PlugLogin}"
+                   Grid.Row="0" Margin="37, 57, 0, 0" VerticalAlignment="Top" 
+                   Style="{DynamicResource PlugText}"/>
+        <!--Заглушка ошибки в логине-->
+        <TextBlock x:Name="ErrorLogin"  FontSize="10" 
+                   Grid.Row="0" Margin="28,88, 0, 0" VerticalAlignment="Top" 
+                   Style="{DynamicResource PlugTextError}" Visibility="Hidden"/>
+        <!--Поле почты-->
+        <TextBox Name="EmailText" Grid.Row="0" Style="{DynamicResource GetDataUser}"
+                 Margin="25, 105, 25, 0" VerticalAlignment="Top" 
+                 TextChanged="EmailText_TextChanged" MaxLength="256"/>
+        <!--Заглушка почты-->
+        <TextBlock x:Name="PlugOfEmail" IsHitTestVisible="False" FontSize="14" Text="{DynamicResource PlugEmail}"
+                   Grid.Row="0" Margin="37, 113, 0, 0" VerticalAlignment="Top" 
+                   Style="{DynamicResource PlugTextt}"/>
+        <!--Заглушка ошибки в почте-->
+        <TextBlock x:Name="ErrorEmail"  FontSize="10"
+                   Grid.Row="0" Margin="28,144, 0, 0" VerticalAlignment="Top" 
+                   Style="{DynamicResource PlugTextError}" Visibility="Hidden"/>
+        <!--Поле имени-->
+        <TextBox Name="PNText" Grid.Row="0" Style="{DynamicResource GetDataUser}"
+                 Margin="25, 160, 25, 0" VerticalAlignment="Top" 
+                 TextChanged="PNText_TextChanged" MaxLength="50"/>
+        <!--Заглушка имени-->
+        <TextBlock x:Name="PlugOfPN" IsHitTestVisible="False" FontSize="14" Text="{DynamicResource PlugPersName}"
+                   Grid.Row="0" Margin="37, 168, 0, 0" VerticalAlignment="Top" 
+                   Style="{DynamicResource PlugTextt}"/>
+        <!--Заглушка ошибки в имени-->
+        <TextBlock x:Name="ErrorPN"  FontSize="10"
+                   Grid.Row="0" Margin="28,198, 0, 0" VerticalAlignment="Top" 
+                   Style="{DynamicResource PlugTextError}" Visibility="Hidden"/>
+        <!--Для пароля форма с заменой символов-->
+        <PasswordBox x:Name="PasswordTextStars" Grid.Row="0" Style="{DynamicResource ForPasswordSec}"
+                 Margin="25, 215, 25, 0" VerticalAlignment="Top" PasswordChanged="PasswordTextStars_PasswordChanged"/>
+        <!--Заглушка пароля-->
+        <TextBlock x:Name="PlugOfPassword" IsHitTestVisible="False" FontSize="14" Text="{DynamicResource PlugPassword}"
+                   Grid.Row="0" Margin="37, 223, 0, 0" VerticalAlignment="Top" 
+                   Style="{DynamicResource PlugTextt}"/>
+        <!--Заглушка ошибки в пароле-->
+        <TextBlock x:Name="ErrorPassword"  FontSize="10"
+                   Grid.Row="0" Margin="28,252, 0, 0" VerticalAlignment="Top" 
+                   Style="{DynamicResource PlugTextError}" Visibility="Hidden"/>
+        <!--Для пароля форма с заменой символов подтверждение-->
+        <PasswordBox x:Name="PasswordTextStarsConf" Grid.Row="0" Style="{DynamicResource ForPasswordSec}"
+                 Margin="25, 270, 25, 0" VerticalAlignment="Top" PasswordChanged="PasswordTextStarsConf_PasswordChanged"/>
+        <!--Заглушка пароля подтверждение-->
+        <TextBlock x:Name="PlugOfPasswordConfirm" IsHitTestVisible="False" FontSize="14" Text="{DynamicResource PlugConfirmPass}"
+                   Grid.Row="0" Margin="37, 278, 0, 0" VerticalAlignment="Top" 
+                   Style="{DynamicResource PlugTextt}"/>
+        <!--Заглушка ошибки в пароле подтверждения-->
+        <TextBlock x:Name="ErrorPasswordConfirm"  FontSize="10"
+                   Grid.Row="0" Margin="28,308, 0, 0" VerticalAlignment="Top" 
+                   Style="{DynamicResource PlugTextError}" Visibility="Hidden"/>
+        <!--Кнопка авторизоваться-->
+        <Border Name="GetAuth" Grid.Row="0" Height="35" VerticalAlignment="Bottom"
+                Margin="25, 0, 25, 25" Style="{DynamicResource AuthificBorder}"
+                BorderThickness="1" CornerRadius="2">
+            <!--Сама кнопка-->
+            <Button x:Name="Auther" Content="{DynamicResource ButtRegister}" FontSize="16"
+                    Style="{DynamicResource ButtonForAutherization}" 
+                    Command="{Binding RegisterNewUser}"
+                    CommandParameter="{Binding ElementName=LogUpPageElem}"/>
+        </Border>
+    </Grid>
+</Page>

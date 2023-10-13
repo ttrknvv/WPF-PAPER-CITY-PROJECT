@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PaperCity.MD5Hash.HashPassword" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>MD5Hash\HashPassword.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EXAMPLE.Migrations.Initial" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAI=</HashCode>
+      <FileName>Migrations\20230515133309_Initial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EXAMPLE.Migrations.ApplicationContextModelSnapshot" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Migrations\ApplicationContextModelSnapshot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EXAMPLE.Model.Data.ApplicationContext" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAgAAAIAAAAAAEAAAAAAAAAAIBQAAIAg=</HashCode>
+      <FileName>Model\Data\ApplicationContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EXAMPLE.Model.Books" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgCAACAAAAAQAEAAABiAAgAAAAAQACAAAAAAAAAAEEA=</HashCode>
+      <FileName>Model\Books.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EXAMPLE.Model.Busket" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Busket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EXAMPLE.Model.BusketBooks" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEIAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\BusketBooks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EXAMPLE.Model.DataWorkerAdminApp" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CBBAQAQIAQEAAAAEACAAAAAAAAAAgAQIAAAAAAEAAAA=</HashCode>
+      <FileName>Model\DataWorkerAdminApp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EXAMPLE.Model.DataWorkerUserApp" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gABQVAABAAkAAAAAAAAAAAAIAAAAAACAAAAEgAoAAAA=</HashCode>
+      <FileName>Model\DataWorkerUserApp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EXAMPLE.Model.Payment" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QBAAAAAAAAAAAAAAAAgAEAAAAAgAAAAAAAEAAAAAAEA=</HashCode>
+      <FileName>Model\Payment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EXAMPLE.Model.RelayCommand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEACAAQAAECAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\RelayCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.Model.ReviewProblem" Collapsed="true">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAEAAAAAAAAAAAABAAQAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Model\ReviewProblem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EXAMPLE.Model.Reviews" Collapsed="true">
+    <Position X="9.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAgAAAAAABAAQAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Model\Reviews.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EXAMPLE.Model.User" Collapsed="true">
+    <Position X="4" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAQAAAEAICAAAAAAAAAAgIAAAAAAACABAAAEA=</HashCode>
+      <FileName>Model\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EXAMPLE.View.AdminAppView.AcceptBuyPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\AdminAppView\AcceptBuyPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.View.AdminAppView.AddBookWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAACAAABAAAAAAAAAAEAAAEAAQAAQAAAABAAAAAAA=</HashCode>
+      <FileName>View\AdminAppView\AddBookWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.View.AdminAppView.AdminMainWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAIAgAAAAAAAwAAggAAAAEAEAJCAABAAAAAABAIAAQ=</HashCode>
+      <FileName>View\AdminAppView\AdminMainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.View.AdminAppView.DelereReviewWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\AdminAppView\DelereReviewWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.View.AdminAppView.EditBooksPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAgABAEAAAAAEAAAQAAAAgAAAAA=</HashCode>
+      <FileName>View\AdminAppView\EditBooksPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.View.AdminAppView.EditBookWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAACAAAFAAAAAQAAACEAAAAAAQAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>View\AdminAppView\EditBookWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.View.AdminAppView.MainPageAdmin" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\AdminAppView\MainPageAdmin.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.View.AdminAppView.SendMessageToUser" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\AdminAppView\SendMessageToUser.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.View.AdminAppView.SendRequestPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAABAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>View\AdminAppView\SendRequestPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.View.AdminAppView.UserListPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAABAEAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>View\AdminAppView\UserListPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.View.AdminAppView.VerifyPaymentWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAEAAAAAAgAAAAAAAAAAAQA=</HashCode>
+      <FileName>View\AdminAppView\VerifyPaymentWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.View.BasketPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAEAAACAEAAAQIAAAAAAAAA=</HashCode>
+      <FileName>View\UserAppView\BasketPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.View.CatalogPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAEAAAAAUAAAAIAAAgCAAAA=</HashCode>
+      <FileName>View\UserAppView\CatalogPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.View.FormForBuyBook" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\UserAppView\FormForBuyBook.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.View.HelpPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\UserAppView\HelpPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.View.InputPhoneNumber" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\UserAppView\InputPhoneNumber.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.View.LogInPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BCIBgAAAAIAAAUAAEBAgEICAAQAAAhgAADRQRAAYAgA=</HashCode>
+      <FileName>View\UserAppView\LogInPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.View.LogUpPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAKEACAABgAAEAAEhAgAAAAIQAAAggBAAAQAAgAAgA=</HashCode>
+      <FileName>View\UserAppView\LogUpPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.View.MainPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQACAAAAAAEgAAAAEAABAAAAgAAAAAA=</HashCode>
+      <FileName>View\UserAppView\MainPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.View.ProfilePage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\UserAppView\ProfilePage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.View.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAIAAAAAAAACgAAggAAAAEAEAICAABAAAgAABAIAgQ=</HashCode>
+      <FileName>View\UserAppView\UserMainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.View.UserAppView.VerifyEmailWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\UserAppView\VerifyEmailWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.View.UserAppView.WindowInputUser" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAgACAAAAAAAIAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\UserAppView\WindowInputUser.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.ViewModel.AdminAppViewModel.DataManageVMAcceptPaying" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAEABAAIAAAAAAAAAggEAAAAAAQAQAAAAkAAA=</HashCode>
+      <FileName>ViewModel\AdminAppViewModel\DataManageVMAcceptPaying.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.ViewModel.AdminAppViewModel.DataManageVMEditBook" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>zAAABEQKAAwADIACWMRkgNAAwICAAAQBgAAGgQAAAoA=</HashCode>
+      <FileName>ViewModel\AdminAppViewModel\DataManageVMEditBook.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.ViewModel.AdminAppViewModel.DataManageVMHelpAdmin" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AFAAgQAQAAAAAIAgAAAAgAAAgAAEAAQCBAAAAgAAAAA=</HashCode>
+      <FileName>ViewModel\AdminAppViewModel\DataManageVMHelpAdmin.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.ViewModel.AdminAppViewModel.DataManageVMListUsers" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KBAAAAAAAQAAAIAAACAAAChgiAAIQAAAACAgAgAgAAI=</HashCode>
+      <FileName>ViewModel\AdminAppViewModel\DataManageVMListUsers.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.ViewModel.AdminAppViewModel.DataManageVMMain" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABgDAgSIAAACgIAgAAiAAAACwgAAAAKAgAQAAgAAECA=</HashCode>
+      <FileName>ViewModel\AdminAppViewModel\DataManageVMMain.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.ViewModel.UserAppViewModel.DataManageVM" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AA0ThQQJcIAECaACQAiFFKAAgRSgAAoIEBAqATBBggk=</HashCode>
+      <FileName>ViewModel\UserAppViewModel\DataManageVM.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.ViewModel.UserAppViewModel.DataManageVMBasket" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAGAAIBAiACIACMAACAIAAiECAAAAIICAGQCAAClA=</HashCode>
+      <FileName>ViewModel\UserAppViewModel\DataManageVMBasket.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.ViewModel.UserAppViewModel.DataManageVMHelp" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAEAAAABAAAgAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\UserAppViewModel\DataManageVMHelp.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.ViewModel.UserAppViewModel.DataManageVMProfile" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQIAAAAiIgAAIAAAAAAgAAAAAgAAAAAAAAACAA=</HashCode>
+      <FileName>ViewModel\UserAppViewModel\DataManageVMProfile.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.ViewModel.UserAppViewModel.DataManageXMCatalog" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAQAAEQKAAgEDIACEARgAJAAwACAAAAJgAACgQAAAoA=</HashCode>
+      <FileName>ViewModel\UserAppViewModel\DataManageXMCatalog.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EXAMPLE.App" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EXAMPLE.SettingOfApp">
+    <Position X="11" Y="6.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAEAAAACIAAAAgAAAAAAAA=</HashCode>
+      <FileName>SettingOfApp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="MainAdminButtonEnum" Collapsed="true">
+    <Position X="4" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAEAAAAAAAEAAAAACAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\AdminAppViewModel\DataManageVMMain.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MainButtonEnum" Collapsed="true">
+    <Position X="5.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgEAAAAAAABAAAAAAAAAACAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\UserAppViewModel\DataManageVM.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EXAMPLE.ThemeOfApplicationEnum" Collapsed="true">
+    <Position X="7.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>SettingOfApp.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EXAMPLE.LanguageOfApplicationEnum" Collapsed="true">
+    <Position X="2.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SettingOfApp.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EXAMPLE.CountryOfAppEnum" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAgAAAAAAAAAAAAAACAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>SettingOfApp.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

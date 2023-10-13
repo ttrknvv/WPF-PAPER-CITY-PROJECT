@@ -1,0 +1,321 @@
+﻿<Page x:Class="EXAMPLE.View.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EXAMPLE.View"
+      mc:Ignorable="d" Background="Transparent"
+      d:DesignHeight="600" d:DesignWidth="730"
+      Title="MainPage">
+
+    <Grid>
+        <Grid x:Name="MainGrid">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" PreviewMouseWheel="ScrollViewer_PreviewMouseWheel">
+                <ScrollViewer.Resources>
+                    <Style TargetType="ScrollBar">
+                        <Setter Property="Template" Value="{DynamicResource VerticalScrollBar}"/>
+                    </Style>
+                </ScrollViewer.Resources>
+                <WrapPanel Orientation="Vertical">
+                    <!--Популярные книги-->
+                    <TextBlock Text="{DynamicResource PopularBookText}" 
+                           Style="{DynamicResource TextBlockName}"
+                           Margin="20, 12, 0, 10"/>
+                    <ListView Name="ListOfPopularBooks" 
+                              Style="{DynamicResource ListStyleMainPage}"
+                              Margin="0, -20, 0, 0"
+                              ItemsSource="{Binding AllPopularBooks}"
+                              MouseDoubleClick="ListOfPopularBooks_MouseDoubleClick"
+                              IsEnabled="True">
+                        <ListView.Resources>
+                            <Style TargetType="ScrollBar">
+                                <Setter Property="Template" Value="{DynamicResource HorizontalScrollBar}"/>
+                            </Style>
+                        </ListView.Resources>
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource ListViewItemStyle}"/>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <WrapPanel Name="panel" 
+                                   Width="200"
+                                VerticalAlignment="Center"
+                               Orientation="Vertical">
+                                    <StackPanel Orientation="Vertical" 
+                                            Width="200">
+                                        <Image Style="{DynamicResource ImageListViewMainPage}"
+                                           Source="{Binding IMAGE_BOOK}"/>
+                                        <TextBlock Style="{DynamicResource TextNameListViewMainPage}"
+                                               Text="{Binding NAME}" />
+                                        <TextBlock Style="{DynamicResource TextAuthorListViewMainPage}"
+                                               Text="{Binding AUTHOR}"/>
+                                    </StackPanel>
+                                </WrapPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <!--Новинки-->
+                    <TextBlock Text="{DynamicResource NewBookText}" 
+                           Style="{DynamicResource TextBlockName}"
+                           Margin="20, -4, 0, 10"/>
+                    <ListView Name="ListOfNewBooks" 
+                              Style="{DynamicResource ListStyleMainPage}"
+                              Margin="0, -20, 0, 0"
+                              ItemsSource="{Binding AllNewBooks}"
+                              MouseDoubleClick="ListOfNewBooks_MouseDoubleClick"
+                              IsEnabled="True">
+                        <ListView.Resources>
+                            <Style TargetType="ScrollBar">
+                                <Setter Property="Template" Value="{DynamicResource HorizontalScrollBar}"/>
+                            </Style>
+                        </ListView.Resources>
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource ListViewItemStyle}"/>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <WrapPanel Name="panel" 
+                                   Width="200"
+                                VerticalAlignment="Center"
+                               Orientation="Vertical">
+                                    <StackPanel Orientation="Vertical" 
+                                            Width="200">
+                                        <Image Style="{DynamicResource ImageListViewMainPage}"
+                                           Source="{Binding IMAGE_BOOK}"/>
+                                        <TextBlock Style="{DynamicResource TextNameListViewMainPage}"
+                                               Text="{Binding NAME}"/>
+                                        <TextBlock Style="{DynamicResource TextAuthorListViewMainPage}"
+                                               Text="{Binding AUTHOR}"/>
+                                    </StackPanel>
+                                </WrapPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <!--Топ бесплатных книг-->
+                    <TextBlock Text="{DynamicResource FreeBookText}" 
+                           Style="{DynamicResource TextBlockName}"
+                           Margin="20, -4, 0, 10"/>
+                    <ListView Name="ListOfFreeBooks" 
+                              Style="{DynamicResource ListStyleMainPage}"
+                              Margin="0, -20, 0, 0"
+                              ItemsSource="{Binding AllPopularFreeBooks}"
+                              MouseDoubleClick="ListOfFreeBooks_MouseDoubleClick"
+                              IsEnabled="True">
+                        <ListView.Resources>
+                            <Style TargetType="ScrollBar">
+                                <Setter Property="Template" Value="{DynamicResource HorizontalScrollBar}"/>
+                            </Style>
+                        </ListView.Resources>
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource ListViewItemStyle}"/>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <WrapPanel Name="panel" 
+                                       Width="200"
+                                       VerticalAlignment="Center"
+                                       Orientation="Vertical">
+                                    <StackPanel Orientation="Vertical" 
+                                            Width="200">
+                                        <Image Style="{DynamicResource ImageListViewMainPage}"
+                                           Source="{Binding IMAGE_BOOK}"/>
+                                        <TextBlock  Style="{DynamicResource TextNameListViewMainPage}"
+                                                Text="{Binding NAME}" />
+                                        <TextBlock  Style="{DynamicResource TextAuthorListViewMainPage}"
+                                                Text="{Binding AUTHOR}"/>
+                                    </StackPanel>
+                                </WrapPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <TextBlock Text="{DynamicResource PayingBookText}" 
+                           Style="{DynamicResource TextBlockName}"
+                           Margin="20, -4, 0, 10"/>
+                    <ListView Name="ListOfPaidBooks" 
+                              Style="{DynamicResource ListStyleMainPage}"
+                              Margin="0, -20, 0, 40"
+                              ItemsSource="{Binding AllPopularPaidBooks}"
+                              MouseDoubleClick="ListOfPaidBooks_MouseDoubleClick"
+                              IsEnabled="True">
+                        <ListView.Resources>
+                            <Style TargetType="ScrollBar">
+                                <Setter Property="Template" Value="{DynamicResource HorizontalScrollBar}"/>
+                            </Style>
+                        </ListView.Resources>
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource ListViewItemStyle}"/>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <WrapPanel Name="panel" 
+                                       Width="200"
+                                       VerticalAlignment="Center"
+                                       Orientation="Vertical">
+                                    <StackPanel Orientation="Vertical" 
+                                            Width="200">
+                                        <Image Style="{DynamicResource ImageListViewMainPage}"
+                                           Source="{Binding IMAGE_BOOK}"/>
+                                        <TextBlock Style="{DynamicResource TextNameListViewMainPage}"
+                                               Text="{Binding NAME}"/>
+                                        <TextBlock Style="{DynamicResource TextAuthorListViewMainPage}"
+                                               Text="{Binding AUTHOR}"/>
+                                    </StackPanel>
+                                </WrapPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </WrapPanel>
+            </ScrollViewer>
+        </Grid>
+        <Grid x:Name="GridForBook"
+              Visibility="Collapsed"
+              Background="Transparent"
+              Width="{Binding ActualWidth, ElementName=catalogPage}"
+              >
+            <Button VerticalAlignment="Top"
+                    HorizontalAlignment="Left"
+                    Width="50"
+                    Height="50"
+                    Margin="20, 0, 0, 0"
+                    Style="{DynamicResource ForButtonWithIconBack}"
+                    Click="Button_Click"/>
+            <ListView x:Name="BookNowSelected"
+                          ItemsSource="{Binding BookNow}"
+                          Style="{DynamicResource ForListBookSelected}"
+                          Width="{Binding ActualWidth, ElementName=GridForBook}"
+                          ItemContainerStyle="{DynamicResource ForItemListBookSelected}"
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                          ScrollViewer.VerticalScrollBarVisibility="Auto"
+                          Height="Auto"
+                          Margin="0, 50, 0, 0">
+                <ListView.Resources>
+                    <Style TargetType="ScrollBar">
+                        <Setter Property="Template" Value="{DynamicResource VerticalScrollBar}"/>
+                    </Style>
+                </ListView.Resources>
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Grid HorizontalAlignment="Left"
+                               MaxWidth="{Binding ActualWidth, ElementName=BookNowSelected}"
+                               Height="Auto" 
+                               />
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Image x:Name="ImageBookNow"
+                                       Source="{Binding IMAGE_BOOK}"
+                                       Style="{DynamicResource ForImageBook}"
+                                       Margin="20,20 ,0, 0"/>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="{DynamicResource NameBook}"
+                                               Style="{DynamicResource ForTextPlug}"
+                                               Margin="230, 20, 40, 0"/>
+                                <TextBlock x:Name="NameBook"
+                                                Text="{Binding NAME}"
+                                                Style="{DynamicResource ForBaseText}"
+                                                Margin="230, 5, 40, 0"/>
+                                <TextBlock Text="{DynamicResource GenreBook}"
+                                               Style="{DynamicResource ForTextPlug}"
+                                               Margin="230, 10, 40, 0"/>
+                                <TextBlock x:Name="GenreBook"
+                                               Text="{Binding GENRE}"
+                                               Style="{DynamicResource ForBaseText}"
+                                               Margin="230, 5, 40, 0"/>
+                                <TextBlock Text="{DynamicResource AuthorBook}"
+                                               Style="{DynamicResource ForTextPlug}"  
+                                               Margin="230, 10, 40, 0"/>
+                                <TextBlock x:Name="AuthorBook"
+                                               Text="{Binding AUTHOR}"
+                                               Style="{DynamicResource ForBaseText}"
+                                               Margin="230, 5, 40, 0"/>
+                                <TextBlock Text="{DynamicResource DateBook}"
+                                               Style="{DynamicResource ForTextPlug}"
+                                               Margin="230, 10, 40, 0"/>
+                                <TextBlock Text="{Binding DATE_PUBLICATION, StringFormat='{}{0:dd.MM.yyyy}'}"
+                                               Style="{DynamicResource ForBaseText}"
+                                               Margin="230, 5, 40, 0"/>
+                                <TextBlock Text="{DynamicResource DescriptionBook}"
+                                               Style="{DynamicResource ForTextPlug}"
+                                               Margin="20, 30, 40, 0"/>
+                                <TextBlock Text="{Binding DESCRIPTION}"
+                                               Style="{DynamicResource ForDesription}"
+                                               Margin="20, 5, 40, 0"
+                                               />
+                                <Button Content="{DynamicResource AddBusketBook}"
+                                            Width="180"
+                                            Height="50"
+                                            Margin="20, 20, 0, 20"
+                                        Style="{DynamicResource ForButtonSelectedBooks}"
+                                        Command="{Binding DataContext.AddBusket, RelativeSource={RelativeSource AncestorType=Page}}"
+                                        CommandParameter="{Binding DataContext.BookNow, ElementName=BookNowSelected}"/>
+                                <TextBlock x:Name="ReviewPlug"
+                                               Text="{DynamicResource ReviewBook}"
+                                           Margin="26, 0, 20, 20"
+                                           FontSize="26"
+                                           FontWeight="DemiBold"
+                                               Style="{DynamicResource ForTextPlug}"/>
+                                <ListView x:Name="ReviewsList"
+                                          ItemsSource="{Binding DataContext.AllReviews, RelativeSource={RelativeSource AncestorType=Page}}"
+                                          Style="{DynamicResource ForListBookSelected}"
+                                          Width="{Binding ActualWidth, ElementName=GridForBook}"
+                                          ItemContainerStyle="{DynamicResource ForItemListBookSelected}" 
+                                          Margin="20, 0, 0, 0"
+                                          PreviewMouseWheel="ReviewsList_PreviewMouseWheel">
+                                    <ListView.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <StackPanel x:Name="ReviewsStackPanel"
+                                                        HorizontalAlignment="Left"
+                                                        MaxWidth="{Binding ActualWidth, ElementName=BookNowSelected}"
+                                                        Height="Auto" />
+                                        </ItemsPanelTemplate>
+                                    </ListView.ItemsPanel>
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel>
+                                                <TextBlock Text="{Binding LOGIN}"
+                                                           Name="NameReviws"
+                                                           Margin="6, 0, 0, 0"
+                                                           Style="{DynamicResource ForLoginReview}"/>
+                                                <TextBlock Text="{Binding DATE, StringFormat='{}{0:dd.MM.yyyy}'}"
+                                                           Name="NameReviws2"
+                                                           Margin="6, 0, 0, 10"
+                                                           Style="{DynamicResource ForDateReview}"/>
+                                                <TextBlock Text="{Binding REVIEW_TEXT}"
+                                                           Name="TexteReviws"
+                                                           Margin="4, 0, 0, 14"
+                                                           Style="{DynamicResource ForTextReview}"
+                                                     />
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Grid>
+</Page>

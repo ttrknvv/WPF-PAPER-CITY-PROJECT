@@ -1,0 +1,131 @@
+﻿<Window x:Class="EXAMPLE.View.UserAppView.WindowInputUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EXAMPLE.View.UserAppView"
+        WindowStyle="None"
+        mc:Ignorable="d" 
+        Style="{DynamicResource ForWindow}"
+        Title="Бумажный город" 
+        Height="515" 
+        Width="365"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" 
+        x:Name="RegForm" Icon="/View/UserAppView/profile.png">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="380"/>
+        </Grid.RowDefinitions>
+        <!--Контейнер верхнегоо правого управляюшего меню-->
+        <Grid Name="ToolBar" 
+              Background="Transparent" 
+              Grid.Row="0" 
+              MouseDown="DragMoveApp">
+            <!--Фигура сверху -->
+            <Polygon x:Name="FigureHight" 
+                     Style="{DynamicResource StartPolygon}" 
+                     Opacity="1"
+                 Points="107, 0,
+                 115,7,
+                 249,7,
+                 257,0"/>
+            <StackPanel Name="PanelForMainElem" 
+                        Orientation="Horizontal" 
+                        HorizontalAlignment="Right">
+                <Image Name="CollapseApp" 
+                       Height="15" 
+                       Width="15" 
+                       Margin="5" 
+                       Style="{DynamicResource MainElementsStyleCollapse}" 
+                       MouseDown="CollapseApp_MouseDown">
+                    <Image.Effect>
+                        <BlurEffect Radius="0.2"/>
+                    </Image.Effect>
+                </Image>
+                <Image Name="CloseApp" 
+                       Height="15" 
+                       Width="15" 
+                       Margin="5, 5 ,10, 5" 
+                       Style="{DynamicResource MainElementsStyleClose}"
+                       MouseDown="CloseApp_MouseDown">
+                    <Image.Effect>
+                        <BlurEffect Radius="0.2"/>
+                    </Image.Effect>
+                </Image>
+            </StackPanel>
+        </Grid>
+        <!--Контейнер логотипа-->
+        <Grid Name="LogoContainer" 
+              Background="Transparent" 
+              Grid.Row="1" >
+            <Image Name="Logotype" 
+                   Source="D:\2k2s\COURSE_PROJECT\SOURCE\PHOTOES\logotypeMain.png"
+                  Width="300" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" 
+                   Margin="0, 0, 0, 44"/>
+        </Grid>
+        <!--Кнопка LogIn-->
+        <Border Name="LogInButtonFrame" 
+                Grid.Row="1" 
+                Height="24" 
+                Width="60" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Bottom" 
+                Margin="20, 0, 0, 0"
+                CornerRadius="2"
+                BorderThickness="1" 
+                Style="{DynamicResource IconForSetting}">
+            <!--Кнопка выбора настроек-->
+            <Button Name="LogInButton" 
+                    Style="{DynamicResource ChoiceButton}" 
+                    Command="{Binding OpenLogInPage}"
+                    CommandParameter="{Binding ElementName=RegForm}"
+                    Click="LogInButton_Click">
+                <StackPanel x:Name="PanelForGear" 
+                            Orientation="Horizontal">
+                    <!-- Текст -->
+                    <TextBlock x:Name="TextLogIn" 
+                               FontSize="14" 
+                               Style="{DynamicResource StyleForButtonFrame}" 
+                               Text="Log In"/>
+                </StackPanel>
+            </Button>
+        </Border>
+        <Border Name="LogUpButtonFrame" 
+                Grid.Row="1" 
+                Height="24" 
+                Width="60" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Bottom" 
+                Margin="90, 0, 0, 0" 
+                CornerRadius="2" 
+                Opacity="0.4"
+                BorderThickness="1" 
+                Style="{DynamicResource IconForSetting}">
+            <!--Кнопка LogUp-->
+            <Button Name="LogUpButton" 
+                    Style="{DynamicResource ChoiceButton}" 
+                    Command="{Binding OpenLogUpPage}"
+                    CommandParameter="{Binding ElementName=RegForm}"
+                    Click="LogUpButton_Click">
+                <StackPanel x:Name="PanelForGear2"
+                            Orientation="Horizontal">
+                    <!-- Текст -->
+                    <TextBlock x:Name="TextLogUp" 
+                               FontSize="14" 
+                               Style="{DynamicResource StyleForButtonFrame}" 
+                               Text="Log Up"/>
+                </StackPanel>
+            </Button>
+        </Border>
+        <Frame NavigationUIVisibility="Hidden" 
+               Grid.Row="2" 
+               x:Name="PageNow"
+               Content="{Binding PageLogIn}"/>
+
+    </Grid>
+</Window>
